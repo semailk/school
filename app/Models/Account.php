@@ -20,7 +20,9 @@ class Account extends Model
     ];
 
     protected $casts = [
-        'appraisal' => 'array'
+        'attendance' => 'array',
+        'appraisal' => 'array',
+        'home_work' => 'array',
     ];
 
     public function user(): BelongsTo

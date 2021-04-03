@@ -16,9 +16,9 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->date('attendance');
-            $table->unsignedTinyInteger('appraisal')->nullable();
-            $table->string('home_work')->nullable();
+            $table->json('attendance');
+            $table->json('appraisal');
+            $table->json('home_work');
             $table->timestamps();
         });
     }

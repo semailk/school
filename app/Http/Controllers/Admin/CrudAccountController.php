@@ -40,6 +40,10 @@ class CrudAccountController extends CrudController
                 'name' => 'appraisal',
 //                'type'  => 'array',
             ],
+            [
+                'label' => 'Дата посещения',
+                'name' => 'attendance',
+            ],
 
         ]);
 
@@ -58,17 +62,14 @@ class CrudAccountController extends CrudController
             [
                 'label' => 'Дата посещения',
                 'name' => 'attendance',
-                'type' => 'date'
             ],
             [
                 'label' => 'Домашняя работа',
                 'name' => 'home_work',
-//                'type' => 'text'
             ],
             [
                 'label' => 'Оценка',
                 'name' => 'appraisal',
-                'type' => 'number'
             ]
         ],
             );

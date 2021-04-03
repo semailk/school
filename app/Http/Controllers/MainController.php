@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -13,7 +15,10 @@ class MainController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $accounts = Account::all();
+        return view('index', [
+            'accounts' => $accounts
+        ]);
     }
 
     public function about()

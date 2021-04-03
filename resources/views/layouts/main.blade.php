@@ -8,20 +8,20 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{asset('../css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/animate.css')}}">
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset('../css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/magnific-popup.css')}}">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="{{asset('../css/aos.css')}}">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="{{asset('../css/ionicons.min.css')}}">
 
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('../css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/style.css')}}">
 </head>
 <body>
 <div class="py-2 bg-primary">
@@ -46,9 +46,9 @@
                     </div>
                     <div class="col-md-3 pr-4 d-flex topper align-items-center">
                         @if(\Illuminate\Support\Facades\Auth::user())
-                        <img style="border-radius: 30%" src="{{asset('../images/teacher/Ruslan.jpg')}}" width="40"
+                        <img style="border-radius: 30%" src="{{asset('storage/' . Auth::user()->img)}}" width="40"
                              alt="">
-                            <h6 class="ml-3 text-dark">{{Auth::user()->name}}</h6>
+                            <a href="{{route('userInformation', \Illuminate\Support\Facades\Auth::id())}}" ><h6 class="ml-3 text-dark">{{Auth::user()->name}}</h6></a>
                            <h6><a class="ml-3 text-white" href="{{route('logout')}}">Logout</a></h6>
                         @else
                             <a href="{{route('register')}}" class="ml-3 text-white">Register</a>
@@ -197,7 +197,7 @@
 <script src="js/aos.js"></script>
 <script src="js/jquery.animateNumber.min.js"></script>
 <script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+{{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>--}}
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
 

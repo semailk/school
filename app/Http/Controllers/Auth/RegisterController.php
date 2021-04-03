@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -44,7 +45,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -53,29 +54,31 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'img' => ['mimes:jpeg,jpg,png|required|max:10000']
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
     {
-//        dd($data);
-        if ($data['code_for_students'] == 'student2021'){
+        $img = request()->file('img')->store('uploads', 'public');
+
+        if ($data['code_for_students'] == 'student2021') {
             $userSave = new User();
             $userSave->name = $data['name'];
             $userSave->last_name = $data['last_name'];
             $userSave->email = $data['email'];
             $userSave->password = Hash::make($data['password']);
-            $userSave->img = $data['img'];
+            $userSave->img = $img;
             $userSave->save();
             return $userSave;
-        }else{
-            return abort(404,'Student code no active');
+        } else {
+            return abort(404, 'Student code no active');
         }
 
 //        return User::create([
