@@ -51,10 +51,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'min:2', 'max:50' ,'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'img' => ['mimes:jpeg,jpg,png|required|max:10000']
+            'img' => ['mimes:jpeg,jpg,png|required|max:10000'],
+            'phone' => ['required', 'string', 'min:7','max:50'],
+            'code_for_students' => ['required', 'string','min:2'],
         ]);
     }
 
@@ -66,15 +68,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $img = request()->file('img')->store('uploads', 'public');
+        $img = request()->file('img')->store('avatar', 'public');
 
         if ($data['code_for_students'] == 'student2021') {
             $userSave = new User();
             $userSave->name = $data['name'];
-            $userSave->last_name = $data['last_name'];
             $userSave->email = $data['email'];
             $userSave->password = Hash::make($data['password']);
             $userSave->img = $img;
+            $userSave->phone = $data['phone'];
             $userSave->save();
             return $userSave;
         } else {

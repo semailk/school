@@ -17,8 +17,15 @@ class Account extends Model
         'attendance',
         'appraisal',
         'home_work',
+        'paid_in',
+        'paid_before'
     ];
 
+    protected $dates = [
+//        'attendance',
+        'paid_in',
+        'paid_before'
+    ];
     protected $casts = [
         'attendance' => 'array',
         'appraisal' => 'array',

@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Blog;
 use Illuminate\View\View;
 
 class BlogController extends Controller
 {
     public function blog(): View
     {
-        return view('blog');
+        $news = Blog::query()->paginate(6);
+        return view('blog', [
+            'news' => $news
+        ]);
+    }
+
+    public function getNew(){
+        $new = Blog::find(preg_replace('/[^0-9]/', '', request()->getQueryString()));
+
+        return \view('newShow', [
+            'new' => $new
+        ]);
     }
 }

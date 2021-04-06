@@ -8,7 +8,7 @@
                      data-scrollax-parent="true">
                     <div class="col-md-8 text-center ftco-animate">
                         <h1 class="mb-4">İstənilən yaşda <span>proqramlaşdırmaya başlayın</span></h1>
-                        <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Read More</a></p>
+{{--                        <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Read More</a></p>--}}
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                      data-scrollax-parent="true">
                     <div class="col-md-8 text-center ftco-animate">
                         <h1 class="mb-4">Fikrinizdəki hamıdan fərqli olun <span>Unikal olun</span></h1>
-                        <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Read More</a></p>
+{{--                        <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Read More</a></p>--}}
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                      data-scrollax-parent="true">
                     <div class="col-md-8 text-center ftco-animate">
                         <h1 class="mb-4">Bir peşə öyrən<span> Hər ölkənin ehtiyac duyduğu şey</span></h1>
-                        <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Read More</a></p>
+{{--                        <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Read More</a></p>--}}
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                             görə, proqramçılar üçün maaş aralığı çox geniş ola bilər, ancaq yuxarıda yazdığımız kimi:
 
                             50,000 - 260,000 rub.</p>
-                        <p><a href="#" class="btn btn-secondary px-4 py-3">Read More</a></p>
+                        <p></p>
                     </div>
                 </div>
                 <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
@@ -268,13 +268,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <h2>Teaching Your Child Some Good Manners</h2>
-                    <p class="mb-0">A small river named Duden flows by their place and supplies it with the necessary
-                        regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your
-                        mouth.</p>
+                    <h2>Bizimlə əlaqə yaratmaq istəyirsinizsə</h2>
+                    <p class="mb-0">Sualınızı yazın və cavab gözləyin, sualınıza mütləq cavab verəcəyik.</p>
                 </div>
                 <div class="col-md-3 d-flex align-items-center">
-                    <p class="mb-0"><a href="#" class="btn btn-secondary px-4 py-3">Take a Course</a></p>
+                    <p class="mb-0"><a href="{{route('contact-us')}}" class="btn btn-secondary px-4 py-3">Sual</a></p>
                 </div>
             </div>
         </div>
@@ -390,16 +388,16 @@
             </div>
             <div class="row">
                 @foreach($accounts as $account)
-{{--                    @dd($account->user->img)--}}
+                    {{--                    @dd($account->user->img)--}}
                     @if(collect(array_merge($account->appraisal, $account->home_work))->pluck('value')->avg() > 4)
                         <div class="col-md-6 course d-lg-flex ftco-animate">
-                            <div class="img" style="background-image: url({{url(asset('storage/' . $account->user->img))}})"></div>
+                            <div class="img"
+                                 style="background-image: url({{url(asset('storage/' . $account->user->img))}})"></div>
                             <div class="text bg-light p-4">
-                                <h3><a href="#">{{$account->user->name}} {{$account->user->last_name}}</a></h3>
-                                <p class="subheading"><span>Class time:</span> 9:00am - 10am</p>
-                                <p>Separated they live in. A small river named Duden flows by their place and supplies
-                                    it with
-                                    the necessary regelialia. It is a paradisematic country</p>
+                                <h3 class="text-center"><a
+                                        href="#">{{mb_strimwidth($account->user->name, 0,15)}} {{mb_strimwidth($account->user->last_name, 0,15)}}</a>
+                                </h3>
+                                <img src="../images/icons/1-mesto.png" alt="" width="100%" height="150">
                             </div>
                         </div>
                     @endif
@@ -408,60 +406,60 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);"
-             data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row justify-content-center mb-5 pb-2">
-                <div class="col-md-8 text-center heading-section heading-section-black ftco-animate">
-                    <h2 class="mb-4"><span>20 Years of</span> Experience</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the
-                        necessary regelialia. It is a paradisematic country</p>
-                </div>
-            </div>
-            <div class="row d-md-flex align-items-center justify-content-center">
-                <div class="col-lg-10">
-                    <div class="row d-md-flex align-items-center">
-                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-                            <div class="block-18">
-                                <div class="icon"><span class="flaticon-doctor"></span></div>
-                                <div class="text">
-                                    <strong class="number" data-number="18">0</strong>
-                                    <span>Certified Teachers</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-                            <div class="block-18">
-                                <div class="icon"><span class="flaticon-doctor"></span></div>
-                                <div class="text">
-                                    <strong class="number" data-number="351">0</strong>
-                                    <span>Successful Kids</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-                            <div class="block-18">
-                                <div class="icon"><span class="flaticon-doctor"></span></div>
-                                <div class="text">
-                                    <strong class="number" data-number="564">0</strong>
-                                    <span>Happy Parents</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-                            <div class="block-18">
-                                <div class="icon"><span class="flaticon-doctor"></span></div>
-                                <div class="text">
-                                    <strong class="number" data-number="300">0</strong>
-                                    <span>Awards Won</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);"--}}
+{{--             data-stellar-background-ratio="0.5">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row justify-content-center mb-5 pb-2">--}}
+{{--                <div class="col-md-8 text-center heading-section heading-section-black ftco-animate">--}}
+{{--                    <h2 class="mb-4"><span>20 Years of</span> Experience</h2>--}}
+{{--                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the--}}
+{{--                        necessary regelialia. It is a paradisematic country</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row d-md-flex align-items-center justify-content-center">--}}
+{{--                <div class="col-lg-10">--}}
+{{--                    <div class="row d-md-flex align-items-center">--}}
+{{--                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">--}}
+{{--                            <div class="block-18">--}}
+{{--                                <div class="icon"><span class="flaticon-doctor"></span></div>--}}
+{{--                                <div class="text">--}}
+{{--                                    <strong class="number" data-number="18">0</strong>--}}
+{{--                                    <span>Certified Teachers</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">--}}
+{{--                            <div class="block-18">--}}
+{{--                                <div class="icon"><span class="flaticon-doctor"></span></div>--}}
+{{--                                <div class="text">--}}
+{{--                                    <strong class="number" data-number="351">0</strong>--}}
+{{--                                    <span>Successful Kids</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">--}}
+{{--                            <div class="block-18">--}}
+{{--                                <div class="icon"><span class="flaticon-doctor"></span></div>--}}
+{{--                                <div class="text">--}}
+{{--                                    <strong class="number" data-number="564">0</strong>--}}
+{{--                                    <span>Happy Parents</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">--}}
+{{--                            <div class="block-18">--}}
+{{--                                <div class="icon"><span class="flaticon-doctor"></span></div>--}}
+{{--                                <div class="text">--}}
+{{--                                    <strong class="number" data-number="300">0</strong>--}}
+{{--                                    <span>Awards Won</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <section class="ftco-section testimony-section bg-light">
         <div class="container">
@@ -477,7 +475,7 @@
                     <div class="carousel-testimony owl-carousel">
                         <div class="item">
                             <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url(images/teacher-1.jpg)">
+                                <div class="user-img mr-4" style="background-image: url({{url(asset('../images/icons/ruslan.png'))}})">
                                 </div>
                                 <div class="text ml-2 bg-light">
                   	<span class="quote d-flex align-items-center justify-content-center">
@@ -492,7 +490,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url(images/teacher-2.jpg)">
+                                <div class="user-img mr-4" style="background-image: url({{url(asset('../images/icons/ruslan.png'))}})">
                                 </div>
                                 <div class="text ml-2 bg-light">
                   	<span class="quote d-flex align-items-center justify-content-center">
@@ -507,7 +505,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url(images/teacher-3.jpg)">
+                                <div class="user-img mr-4" style="background-image: url({{url(asset('../images/icons/ruslan.png'))}})">
                                 </div>
                                 <div class="text ml-2 bg-light">
                   	<span class="quote d-flex align-items-center justify-content-center">
@@ -522,7 +520,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url(images/teacher-4.jpg)">
+                                <div class="user-img mr-4" style="background-image: url({{url(asset('../images/icons/ruslan.png'))}})">
                                 </div>
                                 <div class="text ml-2 bg-light">
                   	<span class="quote d-flex align-items-center justify-content-center">
@@ -537,7 +535,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap d-flex">
-                                <div class="user-img mr-4" style="background-image: url(images/teacher-1.jpg)">
+                                <div class="user-img mr-4" style="background-image: url({{url(asset('../images/icons/ruslan.png'))}})">
                                 </div>
                                 <div class="text ml-2 bg-light">
                   	<span class="quote d-flex align-items-center justify-content-center">
@@ -556,55 +554,60 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/bg_5.jpg);"
+    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url({{url(asset('../images/icons/logo.png'))}})"
              data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-md-6 py-5 px-md-5 bg-primary">
                     <div class="heading-section heading-section-white ftco-animate mb-5">
-                        <h2 class="mb-4">Request A Quote</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts.</p>
+                        <h2 class="mb-4">Sualınızı verin</h2>
+                        <p>Mesajda həqiqi telefon nömrənizi daxil edin ki, sizə zəng edə bilək.</p>
                     </div>
-                    <form action="#" class="appointment-form ftco-animate">
+                    <form action="{{route('contact.us.save')}}" method="POST"  class="appointment-form ftco-animate">
+                        @csrf
                         <div class="d-md-flex">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="First Name">
+                                <input required name="first_name" type="text" class="form-control" placeholder="Ad">
                             </div>
                             <div class="form-group ml-md-4">
-                                <input type="text" class="form-control" placeholder="Last Name">
+                                <input required name="last_name" type="text" class="form-control" placeholder="Soyad">
+                            </div>
+                        </div>
+                        <div class="d-md-flex">
+{{--                            <div class="form-group">--}}
+{{--                                <div class="form-field">--}}
+{{--                                    <div class="select-wrap">--}}
+{{--                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>--}}
+{{--                                        <select name="" id="" class="form-control">--}}
+{{--                                            <option value="">Select Your Course</option>--}}
+{{--                                            <option value="">Art Lesson</option>--}}
+{{--                                            <option value="">Language Lesson</option>--}}
+{{--                                            <option value="">Music Lesson</option>--}}
+{{--                                            <option value="">Sports</option>--}}
+{{--                                            <option value="">Other Services</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+                            <div class="form-group ml-md-4">
+                                <input required name="phone" type="number" class="form-control" placeholder="Nömrə">
                             </div>
                         </div>
                         <div class="d-md-flex">
                             <div class="form-group">
-                                <div class="form-field">
-                                    <div class="select-wrap">
-                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Select Your Course</option>
-                                            <option value="">Art Lesson</option>
-                                            <option value="">Language Lesson</option>
-                                            <option value="">Music Lesson</option>
-                                            <option value="">Sports</option>
-                                            <option value="">Other Services</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <textarea required name="message" id="" cols="30" rows="2" class="form-control"
+                                          placeholder="Mesaj"></textarea>
                             </div>
                             <div class="form-group ml-md-4">
-                                <input type="text" class="form-control" placeholder="Phone">
-                            </div>
-                        </div>
-                        <div class="d-md-flex">
-                            <div class="form-group">
-                                <textarea name="" id="" cols="30" rows="2" class="form-control"
-                                          placeholder="Message"></textarea>
-                            </div>
-                            <div class="form-group ml-md-4">
-                                <input type="submit" value="Request A Quote" class="btn btn-secondary py-3 px-4">
+                                <input type="submit" value="Mesaj göndər" class="btn btn-secondary py-3 px-4">
                             </div>
                         </div>
                     </form>
+                    @if(session('success'))
+                        <div class="alert-success">
+                            {{session('success')}}
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -614,9 +617,8 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4"><span>Our</span> Pricing</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the
-                        necessary regelialia. It is a paradisematic country</p>
+                    <h2 class="mb-4"><span>Xidmət </span>Qiymətləri</h2>
+                    <p>Bir neçə ay əvvəldən bir ödəmə edin və endirim əldə edin.</p>
                 </div>
             </div>
             <div class="row">
@@ -624,14 +626,13 @@
                     <div class="pricing-entry bg-light pb-4 text-center">
                         <div>
                             <h3 class="mb-3">Basic</h3>
-                            <p><span class="price">$24.50</span> <span class="per">/ 5mos</span></p>
+                            <p><span class="price">30 Manat</span> <span class="per">/ 1 ay</span></p>
                         </div>
-                        <div class="img" style="background-image: url(images/bg_1.jpg);"></div>
+                        <div class="img" style="background-image: url(images/icons/logo-price-1.png);"></div>
                         <div class="px-4">
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <p>Aylıq standart kurs qiyməti.</p>
                         </div>
-                        <p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Take A Course</a>
+                        <p class="button text-center"><a href="{{route('contact-us')}}" class="btn btn-primary px-4 py-3">Kurs almaq</a>
                         </p>
                     </div>
                 </div>
@@ -639,14 +640,13 @@
                     <div class="pricing-entry bg-light pb-4 text-center">
                         <div>
                             <h3 class="mb-3">Standard</h3>
-                            <p><span class="price">$34.50</span> <span class="per">/ 5mos</span></p>
+                            <p><span class="price">80 Manat</span> <span class="per">/ 3ay</span></p>
                         </div>
-                        <div class="img" style="background-image: url(images/bg_2.jpg);"></div>
+                        <div class="img" style="background-image: url(images/icons/logo-price-2.png);"></div>
                         <div class="px-4">
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <p>Üç aylıq qiymət. 10 manat qənaət.</p>
                         </div>
-                        <p class="button text-center"><a href="#" class="btn btn-secondary px-4 py-3">Take A Course</a>
+                        <p class="button text-center"><a href="{{route('contact-us')}}" class="btn btn-secondary px-4 py-3">Kurs almaq</a>
                         </p>
                     </div>
                 </div>
@@ -654,14 +654,13 @@
                     <div class="pricing-entry bg-light active pb-4 text-center">
                         <div>
                             <h3 class="mb-3">Premium</h3>
-                            <p><span class="price">$54.50</span> <span class="per">/ 5mos</span></p>
+                            <p><span class="price">150 Manat</span> <span class="per">/ 6ay</span></p>
                         </div>
-                        <div class="img" style="background-image: url(images/bg_3.jpg);"></div>
+                        <div class="img" style="background-image: url(images/icons/logo-price-3.png);"></div>
                         <div class="px-4">
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <p>Altı aylıq qiymət. 30 manat qənaət.</p>
                         </div>
-                        <p class="button text-center"><a href="#" class="btn btn-tertiary px-4 py-3">Take A Course</a>
+                        <p class="button text-center"><a href="{{route('contact-us')}}" class="btn btn-tertiary px-4 py-3">Kurs almaq</a>
                         </p>
                     </div>
                 </div>
@@ -669,15 +668,13 @@
                     <div class="pricing-entry bg-light pb-4 text-center">
                         <div>
                             <h3 class="mb-3">Platinum</h3>
-                            <p><span class="price">$89.50</span> <span class="per">/ 5mos</span></p>
+                            <p><span class="price"> 300 Manat </span> <span class="per">/ 12ay</span></p>
                         </div>
-                        <div class="img" style="background-image: url(images/bg_5.jpg);"></div>
+                        <div class="img" style="background-image: url(images/icons/logo-price-4.png);"></div>
                         <div class="px-4">
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <p>On iki aylıq qiymət. 60 manata qənaət.</p>
                         </div>
-                        <p class="button text-center"><a href="#" class="btn btn-quarternary px-4 py-3">Take A
-                                Course</a></p>
+                        <p class="button text-center"><a href="{{route('contact-us')}}" class="btn btn-quarternary px-4 py-3">Kurs almaq</a></p>
                     </div>
                 </div>
             </div>
@@ -688,28 +685,25 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 class="mb-4"><span>Recent</span> Blog</h2>
-                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the
-                        necessary regelialia. It is a paradisematic country</p>
+                    <h2 class="mb-4"><span>Son</span> xəbərlər</h2>
+                    <p>Blog bölümündə kurslarımızın son xəbərlərini oxuya bilərsiniz</p>
                 </div>
             </div>
             <div class="row">
+                @foreach($lastNews as $new)
                 <div class="col-md-6 col-lg-4 ftco-animate">
                     <div class="blog-entry">
                         <a href="blog-single.html" class="block-20 d-flex align-items-end"
-                           style="background-image: url('images/image_1.jpg');">
+                           style="background-image: url({{url(asset('storage/' . $new->img))}});">
                             <div class="meta-date text-center p-2">
-                                <span class="day">27</span>
-                                <span class="mos">January</span>
-                                <span class="yr">2019</span>
+                                <span class="day">{{$new->created_at}}</span>
                             </div>
                         </a>
                         <div class="text bg-white p-4">
-                            <h3 class="heading"><a href="#">Skills To Develop Your Child Memory</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <h3 class="heading"><a href="{{route('get.new', $new->id)}}">{{$new->title}}</a></h3>
+                            <p>{{mb_strimwidth($new->content,0,100,'...Читать далее')}}</p>
                             <div class="d-flex align-items-center mt-4">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span
+                                <p class="mb-0"><a href="{{route('get.new', $new->id)}}" class="btn btn-secondary">Read More <span
                                             class="ion-ios-arrow-round-forward"></span></a></p>
                                 <p class="ml-auto mb-0">
                                     <a href="#" class="mr-2">Admin</a>
@@ -719,56 +713,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20 d-flex align-items-end"
-                           style="background-image: url('images/image_2.jpg');">
-                            <div class="meta-date text-center p-2">
-                                <span class="day">27</span>
-                                <span class="mos">January</span>
-                                <span class="yr">2019</span>
-                            </div>
-                        </a>
-                        <div class="text bg-white p-4">
-                            <h3 class="heading"><a href="#">Skills To Develop Your Child Memory</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <div class="d-flex align-items-center mt-4">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span
-                                            class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20 d-flex align-items-end"
-                           style="background-image: url('images/image_3.jpg');">
-                            <div class="meta-date text-center p-2">
-                                <span class="day">27</span>
-                                <span class="mos">January</span>
-                                <span class="yr">2019</span>
-                            </div>
-                        </a>
-                        <div class="text bg-white p-4">
-                            <h3 class="heading"><a href="#">Skills To Develop Your Child Memory</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
-                            <div class="d-flex align-items-center mt-4">
-                                <p class="mb-0"><a href="#" class="btn btn-secondary">Read More <span
-                                            class="ion-ios-arrow-round-forward"></span></a></p>
-                                <p class="ml-auto mb-0">
-                                    <a href="#" class="mr-2">Admin</a>
-                                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -777,32 +722,32 @@
         <div class="container-wrap">
             <div class="row no-gutters">
                 <div class="col-md-3 ftco-animate">
-                    <a href="images/image_1.jpg" class="gallery image-popup img d-flex align-items-center"
-                       style="background-image: url(images/course-1.jpg);">
+                    <a href="{{asset('../images/icons/footer-img1.png')}}" class="gallery image-popup img d-flex align-items-center"
+                       style="background-image: url({{url(asset('../images/icons/footer-img1.png'))}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 ftco-animate">
-                    <a href="images/image_2.jpg" class="gallery image-popup img d-flex align-items-center"
-                       style="background-image: url(images/image_2.jpg);">
+                    <a href="{{asset('../images/icons/footer-img2.png')}}" class="gallery image-popup img d-flex align-items-center"
+                       style="background-image: url({{url(asset('../images/icons/footer-img2.png'))}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 ftco-animate">
-                    <a href="images/image_3.jpg" class="gallery image-popup img d-flex align-items-center"
-                       style="background-image: url(images/image_3.jpg);">
+                    <a href="{{asset('../images/icons/footer-img3.png')}}" class="gallery image-popup img d-flex align-items-center"
+                       style="background-image: url({{url(asset('../images/icons/footer-img3.png'))}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 ftco-animate">
-                    <a href="images/image_4.jpg" class="gallery image-popup img d-flex align-items-center"
-                       style="background-image: url(images/image_4.jpg);">
+                    <a href="{{asset('../images/icons/footer-img4.png')}}" class="gallery image-popup img d-flex align-items-center"
+                       style="background-image: url({{url(asset('../images/icons/footer-img4.png'))}});">
                         <div class="icon mb-4 d-flex align-items-center justify-content-center">
                             <span class="icon-instagram"></span>
                         </div>

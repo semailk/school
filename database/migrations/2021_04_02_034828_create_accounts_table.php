@@ -19,6 +19,8 @@ class CreateAccountsTable extends Migration
             $table->json('attendance');
             $table->json('appraisal');
             $table->json('home_work');
+            $table->date('paid_in')->nullable();
+            $table->date('paid_before')->nullable();
             $table->timestamps();
         });
     }

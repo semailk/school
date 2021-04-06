@@ -44,7 +44,6 @@ class CrudAccountController extends CrudController
                 'label' => 'Дата посещения',
                 'name' => 'attendance',
             ],
-
         ]);
 
         $this->crud->addFields([  // Select
@@ -70,11 +69,19 @@ class CrudAccountController extends CrudController
             [
                 'label' => 'Оценка',
                 'name' => 'appraisal',
+            ],
+            [
+                'name' => ['paid_in', 'paid_before'],
+                'label' => 'Оплата за курс',
+                'type' => 'date_range',
+
+                // options sent to daterangepicker.js
+                'date_range_options' => [
+                    'timePicker' => true,
+                    'locale' => ['format' => 'DD/MM/YYYY']
+                ]
             ]
         ],
-            );
-
-
+        );
     }
-
 }
