@@ -9,7 +9,7 @@ use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
 use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
 use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
-class CrudBlogController extends CrudController
+class CrudUserController extends CrudController
 {
     use ListOperation;
     use CreateOperation;
@@ -19,42 +19,47 @@ class CrudBlogController extends CrudController
 
     public function setup()
     {
-        $this->crud->setModel("App\Models\Blog");
-        $this->crud->setRoute("admin/blogs");
-        $this->crud->setEntityNameStrings('blog', 'blogs');
+        $this->crud->setModel("App\Models\User");
+        $this->crud->setRoute("admin/users");
+        $this->crud->setEntityNameStrings('user', 'users');
 
         $this->crud->setColumns([
             [
-                'title' => 'Title',
+                'title' => 'Name',
                 'type' => 'text',
-                'name' => 'title'
+                'name' => 'name'
             ],
             [
-                'title' => 'Content',
+                'title' => 'Email',
                 'type' => 'text',
-                'name' => 'content'
+                'name' => 'email'
             ],
             [
-                'name'      => 'image',
+                'title' => 'Phone',
+                'type' => 'text',
+                'name' => 'phone'
+            ],
+            [
+                'name'      => 'img',
                 'label'     => 'Image',
-                'type'      => 'upload',
-                'upload'    => true,
-                'disk'      => 'public', // if you store files in the /public folder, please omit this; if you store them in /storage or S3, please specify it;
-                // optional:
-//                'temporary' => 10 //
             ]
         ]);
 
         $this->crud->addFields([
             [
-                'title' => 'Title',
+                'title' => 'Name',
                 'type' => 'text',
-                'name' => 'title'
+                'name' => 'name'
             ],
             [
-                'title' => 'Content',
-                'type'  => 'textarea',
-                'name' => 'content'
+                'title' => 'Email',
+                'type' => 'text',
+                'name' => 'email'
+            ],
+            [
+                'title' => 'Phone',
+                'type' => 'text',
+                'name' => 'phone'
             ],
             [
                 'name'      => 'img',
