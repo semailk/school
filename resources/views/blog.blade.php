@@ -7,7 +7,7 @@
                 <div class="col-md-9 ftco-animate text-center">
                     <h1 class="mb-2 bread">Our Blog</h1>
                     <p class="breadcrumbs"><span class="mr-2"><a href="index.blade.php">Home <i
-                                    class="ion-ios-arrow-forward"></i></a></span> <span>Blog <i
+                                    class="ion-ios-arrow-forward"></i></a></span> <span>Son xəbərlər<i
                                 class="ion-ios-arrow-forward"></i></span></p>
                 </div>
             </div>
