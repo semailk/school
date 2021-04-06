@@ -20,7 +20,7 @@ class Blog extends Model
     public function setImgAttribute($value)
     {
         $attribute_name = "img";
-        $disk = "storage";
+        $disk = "public";
         $destination_path = "blogs";
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
@@ -32,7 +32,7 @@ class Blog extends Model
     {
         parent::boot();
         static::deleting(function($obj) {
-            Storage::disk('storage')->delete($obj->img);
+            Storage::disk('public')->delete($obj->img);
         });
     }
 }
