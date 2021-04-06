@@ -22,15 +22,17 @@ class AccountController extends Controller
     public function imgUpdate(Request $request)
     {
         $rules = [
-            'img' => 'mimes:jpeg,jpg,png|required|max:10000',
+            'img' => 'mimes:jpeg,jpg,png|max:10000',
         ];
         $this->validate($request, $rules);
+
         $user = User::query()->findOrFail(Auth::id());
+        if ($request->has('img')){
+            $avatarName = $request->file('img')->store('avatar', 'public');
+            Storage::disk('public')->delete($user->img);
+            $user->img = $avatarName;
+        }
 
-        $avatarName = $request->file('img')->store('avatar', 'public');
-
-        Storage::disk('public')->delete($user->img);
-        $user->img = $avatarName;
         $user->name = $request->name;
         $user->phone = $request->phone;
         $user->save();
