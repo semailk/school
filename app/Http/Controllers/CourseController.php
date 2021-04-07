@@ -8,7 +8,7 @@ class CourseController extends Controller
 {
     public function getCoursesAll()
     {
-        $courses = Course::query()->paginate(6);
+        $courses = Course::all();
 
         return view('courses', [
             'courses' => $courses
