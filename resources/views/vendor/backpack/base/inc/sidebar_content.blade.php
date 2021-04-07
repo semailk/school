@@ -1,2 +1,10 @@
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
+{{--<li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>--}}
+
+<li class="nav-item"><a class="nav-link" href="<?php echo e(backpack_url('dashboard')); ?>"><i class="la la-home nav-icon"></i> <?php echo e(trans('backpack::base.dashboard')); ?></a></li><?php /**PATH /app/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php ENDPATH**/ ?>
+<li class="nav-item"><a class="nav-link" href="<?php echo e(backpack_url('accounts')); ?>"><i class="la la-home nav-icon"></i> <?php echo 'Accounts'; ?></a></li><?php /**PATH /app/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php ENDPATH**/ ?>
+<li class="nav-item"><a class="nav-link" href="<?php echo e(backpack_url('blogs')); ?>"><i class="la la-home nav-icon"></i> <?php echo 'Blogs'; ?></a></li><?php /**PATH /app/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php ENDPATH**/ ?>
+<li class="nav-item"><a class="nav-link" href="<?php echo e(backpack_url('courses')); ?>"><i class="la la-home nav-icon"></i> <?php echo 'Courses'; ?></a></li><?php /**PATH /app/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php ENDPATH**/ ?>
+<li class="nav-item"><a class="nav-link" href="<?php echo e(backpack_url('galleries')); ?>"><i class="la la-home nav-icon"></i> <?php echo 'Galleries'; ?></a></li><?php /**PATH /app/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php ENDPATH**/ ?>
+<li class="nav-item"><a class="nav-link" href="<?php echo e(backpack_url('contacts')); ?>"><i class="la la-home nav-icon"></i> <?php echo 'Contacts'; ?></a></li><?php /**PATH /app/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php ENDPATH**/ ?>
+<li class="nav-item"><a class="nav-link" href="<?php echo e(backpack_url('users')); ?>"><i class="la la-home nav-icon"></i> <?php echo 'Users'; ?></a></li><?php /**PATH /app/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php ENDPATH**/ ?>
