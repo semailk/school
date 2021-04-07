@@ -21,7 +21,7 @@
                 <div class="col-md-6 col-lg-4 ftco-animate">
                     <div class="blog-entry">
                         <a href="{{route('get.new', $new->id)}}" class="block-20 d-flex align-items-end"
-                           style="background-image: url({{url(asset('storage/' . $new->img))}});">
+                           style="background-image: url({{url(asset(\Illuminate\Support\Facades\Storage::disk('s3')->url($new->img)))}});">
                             <div class="meta-date text-center p-2">
                                 <span class="day">{{$new->created_at}}</span>
                             </div>

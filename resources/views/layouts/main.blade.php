@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-md-3 pr-4 d-flex topper align-items-center">
                         @if(\Illuminate\Support\Facades\Auth::user())
-                            <img style="border-radius: 30%" src="{{asset('storage/' . Auth::user()->img)}}" width="40"
+                            <img style="border-radius: 30%" src="{{asset(\Illuminate\Support\Facades\Storage::disk('s3')->url(Auth::user()->img))}}" width="40"
                                  alt="">
                             <a href="{{route('userInformation', \Illuminate\Support\Facades\Auth::id())}}"><h6
                                     class="ml-3 text-dark">Haqqımda məlumat</h6></a>

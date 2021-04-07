@@ -28,8 +28,8 @@ class AccountController extends Controller
 
         $user = User::query()->findOrFail(Auth::id());
         if ($request->has('img')){
-            $avatarName = $request->file('img')->store('avatar', 'public');
-            Storage::disk('public')->delete($user->img);
+            $avatarName = $request->file('img')->store('avatar', 's3');
+            Storage::disk('s3')->delete($user->img);
             $user->img = $avatarName;
         }
 

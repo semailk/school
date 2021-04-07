@@ -20,7 +20,7 @@ class Course extends Model
     public function setImgAttribute($value)
     {
         $attribute_name = "img";
-        $disk = "public";
+        $disk = "s3";
         $destination_path = "courses";
 
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
@@ -32,7 +32,7 @@ class Course extends Model
     {
         parent::boot();
         static::deleting(function($obj) {
-            Storage::disk('public')->delete($obj->img);
+            Storage::disk('s3')->delete($obj->img);
         });
     }
 }

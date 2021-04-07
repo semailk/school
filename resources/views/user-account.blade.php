@@ -6,7 +6,7 @@
                 <?php $user = \App\Models\User::find(\Illuminate\Support\Facades\Auth::id());?>
 
                 <ul style="list-style-type: none;" class="text-center">
-                  <li> <img style="display: block; margin-right: auto;margin-left: auto" src="{{asset('storage/' . $user->img)}}" width="100" height="100" alt=""></li><h5>Fotonu dəyişdirmək istəyirsiniz?</h5>
+                  <li> <img style="display: block; margin-right: auto;margin-left: auto" src="{{asset(\Illuminate\Support\Facades\Storage::disk('s3')->url($user->img))}}" width="100" height="100" alt=""></li><h5>Fotonu dəyişdirmək istəyirsiniz?</h5>
                     <form action="{{route('img.update')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="img" class="form-control mb-2">

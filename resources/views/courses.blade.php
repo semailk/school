@@ -16,7 +16,7 @@
 				<div class="row">
                     @foreach($courses as $course)
 					<div class="col-md-6 course d-lg-flex ftco-animate">
-						<div class="img" style="background-image: url({{url(asset('storage/' . $course->img))}}); background-size: auto;"></div>
+						<div class="img" style="background-image: url({{url(asset(\Illuminate\Support\Facades\Storage::disk('s3')->url($course->img)))}}); background-size: auto;"></div>
 						<div class="text bg-light p-4">
 							<h3><a href="#">{{$course->title}}</a></h3>
 {{--							<p class="subheading"><span>Class time:</span> 9:00am - 10am</p>--}}

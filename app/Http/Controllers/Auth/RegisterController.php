@@ -8,7 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -68,7 +70,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $img = request()->file('img')->store('avatar', 'public');
+       $img = Storage::disk('s3')->put(md5(Str::random('10').'png'),request()->file('img'));
 
         if ($data['code_for_students'] == 'student2021') {
             $userSave = new User();
