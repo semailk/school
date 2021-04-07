@@ -33,6 +33,10 @@ class CrudGalleryController extends CrudController
               'label' => 'title',
               'type' => 'text'
             ],
+            [
+                'name' => 'img',
+                'title' => 'Images'
+            ]
         ]);
 
         $this->crud->addFields([
